@@ -1,1 +1,1 @@
-powershell.exe -ExecutionPolicy Bypass Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System -Name Wallpaper -Value (Invoke-WebRequest -Uri https://grmdaily.com/wp-content/uploads/2020/10/callums-corner.png) -OutFile C:\image.jpg
+powershell.exe -ExecutionPolicy Bypass Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System -Name Wallpaper -Value (Invoke-WebRequest -Uri https://i.imgur.com/7dwESBA.png -OutFile C:\image.jpg)

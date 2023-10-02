@@ -1,0 +1,29 @@
+$newRegPath = "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies"
+$regPath = "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System"
+$keyWallpaper = "Wallpaper"
+$keyWallpaperValue = "C:\ProgramData\img.jpg"
+$keyWallpaperStyle = "WallPaperStyle"
+$keyWallpaperStyleValue = "4"
+
+Invoke-WebRequest -Uri "https://i.imgur.com/7dwESBA.png" -OutFile $keyWallpaperValue
+
+if (Test-Path $regPath){
+    #found path
+    if (Get-ItemProperty -Path $regPath -Name $keyWallpaper){
+        #found key
+        Set-ItemProperty -Path $regPath -Name $keyWallpaper -Value $($keyWallpaperValue)
+    }
+    #key not found
+    else {
+        New-ItemProperty -Path $regPath -Name $keyWallpaper -Value $keyWallpaperValue -PropertyType "String"
+        New-ItemProperty -Path $regPath -Name $keyWallpaperStyle -Value $keyWallpaperStyleValue -PropertyType "String"
+    }
+}
+#path not found
+else {
+    New-Item -Path $newRegPath -Name "System"
+    New-ItemProperty -Path $regPath -Name $keyWallpaper -Value $keyWallpaperValue -PropertyType "String"
+    New-ItemProperty -Path $regPath -Name $keyWallpaperStyle -Value $keyWallpaperStyleValue -PropertyType "String"
+}
+
+Stop-Process -Name "explorer"

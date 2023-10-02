@@ -12,6 +12,7 @@ if (Test-Path $regPath){
     if (Get-ItemProperty -Path $regPath -Name $keyWallpaper){
         #found key
         Set-ItemProperty -Path $regPath -Name $keyWallpaper -Value $($keyWallpaperValue)
+        Set-ItemProperty -Path $regPath -Name $keyWallpaperStyle -Value $($keyWallpaperStyleValue)
     }
     #key not found
     else {

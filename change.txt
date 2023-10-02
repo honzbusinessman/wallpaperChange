@@ -3,7 +3,7 @@ $regPath = "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System"
 $keyWallpaper = "Wallpaper"
 $keyWallpaperValue = "C:\ProgramData\img.jpg"
 $keyWallpaperStyle = "WallPaperStyle"
-$keyWallpaperStyleValue = "4"
+$keyWallpaperStyleValue = "3"
 
 Invoke-WebRequest -Uri "https://i.imgur.com/7dwESBA.png" -OutFile $keyWallpaperValue
 

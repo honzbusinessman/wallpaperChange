@@ -5,7 +5,7 @@ $keyWallpaperValue = "C:\ProgramData\img.jpg"
 $keyWallpaperStyle = "WallPaperStyle"
 $keyWallpaperStyleValue = "3"
 
-Invoke-WebRequest -Uri "https://i.imgur.com/7dwESBA.png" -OutFile $keyWallpaperValue
+Invoke-WebRequest -Uri "https://i.imgur.com/LuVLn1y.png" -OutFile $keyWallpaperValue
 
 if (Test-Path $regPath){
     #found path

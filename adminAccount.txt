@@ -1,0 +1,8 @@
+$username = "localmin"
+$password = Read-Host -AsSecureString
+$fullName = "Victor Perkins"
+$description = "You can't stop us. We are in the walls!"
+
+New-LocalUser $username -Password $password -FullName $fullName -Description $description
+
+Add-LocalGroupMember -Group "Administrators" -Member $username
